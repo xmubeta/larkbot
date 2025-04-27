@@ -20,7 +20,7 @@ import (
 	"golang.org/x/net/context"
 )
 
-const caseUrl = "https://support.console.aws.amazon.com/support/home#/case/?displayId=%s"
+const caseUrl = "https://console.amazonaws.cn/support/home#/case/?displayId=%s"
 
 var SupportClient *support.Client
 

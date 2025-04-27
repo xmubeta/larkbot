@@ -192,7 +192,7 @@ export class LarkbotAppStack extends cdk.Stack {
             sid: 'AllowToAssumeToRoleWithSupportAPIAccess',
             effect: iam.Effect.ALLOW,
             actions: ['sts:AssumeRole'],
-            resources: ['arn:aws:iam::*:role/FeishuSupportCaseApiAll*']
+            resources: ['arn:aws-cn:iam::*:role/FeishuSupportCaseApiAll*']
           }
         ))
 
@@ -210,6 +210,7 @@ export class LarkbotAppStack extends cdk.Stack {
     const msgEventApi = new apigateway.LambdaRestApi(this, 'msgEventapi', {
       handler: msgEventAlias,
       proxy: false,
+      endpointTypes: [apigateway.EndpointType.REGIONAL]
     })
 
     const eventMessages = msgEventApi.root.addResource('messages');
